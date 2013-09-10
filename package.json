@@ -1,0 +1,23 @@
+{
+	"name": "Hyperlink",
+	"author": "Melinda Gallo (http://github.com/melindagallo)",
+	"contributors": [
+	    "Erwan Carriou @ecarriou", 
+	    "Stephane Puybareau"
+	],
+	"version": "1.0.0",
+	"copyright": "(c)2013 Melinda Gallo",
+	"repository": {
+	    "type": "git",
+	    "url": "https://github.com/melindagallo/Hyperlink.git"
+	},
+	"keywords": ["wakanda", "widget", "href", "mailto", "email", "url", "link"],
+	"engines": {"wakanda" : ">=6.141313"},
+	"license": "MIT", 
+	"loadDependencies": [
+		{"id": "Widget_V2"},
+	    {"id": "Hyperlink/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+	    {"id": "Hyperlink/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+	    {"id": "Hyperlink/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
+	]
+}
