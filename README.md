@@ -1,7 +1,5 @@
-##Hyperlink widget for Wakanda##
-
+##Hyperlink widget for Wakanda
 The __Hyperlink__ widget allows you to create a &lt;a&gt; tag  whose source and text can both be datasources. You can use it to create live hyperlinks on your Page that are either email addresses or URLs.
-
 
 ### Properties
 The __Hyperlink__ widget has the following properties:
