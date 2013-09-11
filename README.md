@@ -5,9 +5,6 @@ The __Hyperlink__ widget allows you to create a &lt;a&gt; tag  whose source and 
 
 ### Properties
 The __Hyperlink__ widget has the following properties:
-
-You can either drag a datasource of type Attribute on top of the widget to define the two datasources or select the attribute in the two properties:
-
 * __Hyperlink source__: Datasource of type Attribute that contains either an email address or a URL.
 * __Hyperlink text__: Datasource of type Attribute that contains the text that appears in the &lt;a&gt;...&lt;/a&gt; tag, which is visible on the browser.
 * __Target__: You can select either "_blank" to force the browser to open a new page/tab or "_self" to allow the browser to replace the existing page.
