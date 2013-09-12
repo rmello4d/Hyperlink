@@ -12,14 +12,14 @@
 	 * @returns {String} Updated hyperlink
 	 */
     Widget.Hyperlink.prototype.value = function(myValue) {
-        if (arguments.length > 0) {
-            this.hyperlinkValue = myValue;
+        if (arguments.length > 0) { // if there's a parameter, set the value
+            this._value = myValue;
             this.fire(new Event.Change({
                 value: myValue
             }));
             this.updateLink(); //update hyperlink
         }
-        return this.hyperlinkValue; 
+        return this._value;  // otherwise, just get the value
     };
 
 	/**
@@ -31,13 +31,13 @@
 	 */
     Widget.Hyperlink.prototype.label = function(myValue) {
         if (arguments.length > 0) {
-            this.hyperlinkText = myValue;
+            this._label = myValue;
             this.fire(new Event.Change({
                 value: myValue
             }));
             this.updateLink(); //update hyperlink
         }
-        return this.hyperlinkText;
+        return this._label;
     };
 
 	/**
@@ -46,21 +46,24 @@
 	 * @method updateLink 
 	 */
     Widget.Hyperlink.prototype.updateLink = function() {
-  		if (this.hyperlinkValue) {   //if there is a value in the hyperlink source property   
-		var prefix = /[a-z0-9._+-]+@[a-z0-9._-]+\.[a-z]{2,5}/.test(this.hyperlinkValue) ? 'mailto:' : '',  //test to see if the hyperlink is an email address, if so add "mailto:"
+    	var hyperlinkValue = this.value(), 
+    		hyperlinkText = this.label();
+  		if (hyperlinkValue) {   //if there is a value in the hyperlink source property   
+		var prefix = /[a-z0-9._+-]+@[a-z0-9._-]+\.[a-z]{2,5}/.test(hyperlinkValue) ? 'mailto:' : '',  //test to see if the hyperlink is an email address, if so add "mailto:"
 		targetToDisplay = '', 
 		linkTextToDisplay = '';
   
 	    if (prefix === '') {  //add target to URLs and not emails	
-	  		if (this.hyperlinkValue && this.hyperlinkValue.substring(0,7)!=='http://') { //if the http:// is not in the URL, add it
-	    		this.hyperlinkValue = 'http://'+this.hyperlinkValue;
+	  		if (hyperlinkValue && hyperlinkValue.substring(0,7)!=='http://') { //if the http:// is not in the URL, add it
+	    		hyperlinkValue = 'http://'+hyperlinkValue;
 	    	}
             targetToDisplay = ' target="' + this.options.target + '"';
         } else {
             targetToDisplay = '';
         }
-        if (this.hyperlinkText && this.hyperlinkText !== '') {
-        	linkTextToDisplay = this.hyperlinkText; //get hyperlink text
+        
+        if (hyperlinkText && hyperlinkText !== '') {
+        	linkTextToDisplay = hyperlinkText; //get hyperlink text
     	} else {
     		if (this.options.text) {
 				linkTextToDisplay = this.options.text; //if no hyperlink text, get default text from data-text property
@@ -68,7 +71,7 @@
 				linkTextToDisplay = "Click here"; //if all else fails, use this text
 			}
 		}
-        this.node.innerHTML = '<a ' + targetToDisplay + 'href="' + prefix + this.hyperlinkValue + '">' + linkTextToDisplay + '</a>'; //insert <a> tag inside the <div> tag
+        this.node.innerHTML = '<a ' + targetToDisplay + 'href="' + prefix + hyperlinkValue + '">' + linkTextToDisplay + '</a>'; //insert <a> tag inside the <div> tag
 	  	} else {
 	  		this.node.innerHTML = "";
 	  	}
