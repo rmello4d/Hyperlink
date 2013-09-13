@@ -1,4 +1,4 @@
-(function() {
+;(function() {
     var Widget = WAF.require('waf-core/widget'),
     widget = Widget.create('Hyperlink');
     
