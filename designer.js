@@ -1,4 +1,4 @@
-(function() {
+;(function() {
     var widget = Widget.Hyperlink.inherit(WAF.require('waf-behavior/studio'));
 
     /*Widget's display name*/
