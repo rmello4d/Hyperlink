@@ -1,11 +1,11 @@
-;(function() {
-    var widget = Widget.Hyperlink.inherit(WAF.require('waf-behavior/studio'));
+(function() {
+    var Hyperlink = Widget.Hyperlink.inherit(WAF.require('waf-behavior/studio'));
 
     /*Widget's display name*/
-    widget.setDescription('Hyperlink');
+    Hyperlink.setDescription('Hyperlink');
 
     /*Properties*/
-    widget.addAttributes([{
+    Hyperlink.addAttributes([{
         name: 'data-binding',
         description: 'Hyperlink Source'
     },{
@@ -32,12 +32,12 @@
         defaultValue: 'left'
     }]);
 
-    /*Default positioning*/
-    widget.setWidth('200');
-    widget.setHeight('20');
+    /*Default size*/
+    Hyperlink.setWidth('200');
+    Hyperlink.setHeight('20');
 
     /*Events*/
-    widget.addEvents([{
+    Hyperlink.addEvents([{
         'name': 'click',
         'description': 'On Click',
         'category': 'Mouse Events'
@@ -48,7 +48,7 @@
     }]);
 
     /*Styles*/
-    widget.setPanelStyle({
+    Hyperlink.setPanelStyle({
         'fClass': true,
         'text': true,
         'background': true,
@@ -58,8 +58,8 @@
         'disabled': ['border-radius']
     });
         
-    widget.on('Display', function(event) {
-    	if(event['data-binding']) {
+    Hyperlink.on('Display', function(event) {
+    	if(event['data-binding']) { 
      	   $('#' + event['id']).html('['+event['data-binding']+']');
     	}
     });
