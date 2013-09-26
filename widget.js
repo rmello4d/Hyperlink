@@ -1,31 +1,29 @@
-;(function() {
-    var Widget = WAF.require('waf-core/widget'),
-        widget = Widget.create('Hyperlink');
+(function() {
+    var widget = WAF.require('waf-core/widget'),
+        Hyperlink = widget.create('Hyperlink');
 
-    Widget.Hyperlink.addClass('waf-skin-textHyperlink');
+    Hyperlink.addClass('waf-skin-textHyperlink');
 
     Event.create("click");
     Event.create("mouseover");
 
-    widget.prototype.init = function() {
+    Hyperlink.prototype.init = function() {
         $('#' + this.id).bind('click', function(event) {
-            var widgetObj = $$(this.id);
-            Event.click.fire(widgetObj);
+            Event.click.fire($$(this.id));
         });
         $('#' + this.id).bind('mouseover', function(event) {
-            var widgetObj = $$(this.id);
-            Event.mouseover.fire(widgetObj);
+            Event.mouseover.fire($$(this.id));
         });
     }
 
     /**
      * This method checks the data-binding datasource value. If it has changed, this function returns the new value.
-     * @class Widget.Hyperlink
+     * @class Hyperlink
      * @method value 
      * @param {String} myValue Value of the data-binding property (Hyperlink Source)
      * @returns {String} Updated hyperlink
      */
-    Widget.Hyperlink.prototype.value = function(myValue) {
+    Hyperlink.prototype.value = function(myValue) {
         if (arguments.length > 0) { // if there's a parameter, set the value
             this._value = myValue;
             this.fire(new Event.Change({
@@ -38,12 +36,12 @@
 
     /**
      * This method checks the data-binding-label datasource value. If it has changed, this function returns the new value.
-     * @class Widget.Hyperlink
+     * @class Hyperlink
      * @method label 
      * @param {String} myValue Value of the data-binding-label property (Hyperlink Text source)
      * @returns {String} Updated hyperlink
      */
-    Widget.Hyperlink.prototype.label = function(myValue) {
+    Hyperlink.prototype.label = function(myValue) {
         if (arguments.length > 0) {
             this._label = myValue;
             this.fire(new Event.Change({
@@ -56,10 +54,10 @@
 
     /**
      * This function builds the hyperlink to be returned in the widget. 
-     * @class Widget.Hyperlink
+     * @class Hyperlink
      * @method updateLink 
      */
-    Widget.Hyperlink.prototype._updateLink = function() {
+    Hyperlink.prototype._updateLink = function() {
         var hyperlinkValue = this.value(),
             hyperlinkText = this.label();
         if (hyperlinkValue) { //if there is a value in the hyperlink source property   
@@ -96,6 +94,6 @@
         }
     };
 
-    Widget.Hyperlink.makeBindableProperty(Widget.Hyperlink.prototype.value); //data-binding property 
-    Widget.Hyperlink.makeBindableProperty("label", Widget.Hyperlink.prototype.label); //data-binding-label property 
+    Hyperlink.makeBindableProperty(Hyperlink.prototype.value); //data-binding property 
+    Hyperlink.makeBindableProperty("label", Hyperlink.prototype.label); //data-binding-label property 
 })();
