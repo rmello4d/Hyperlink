@@ -12,10 +12,10 @@
 	    "url": "https://github.com/melindagallo/Hyperlink.git"
 	},
 	"keywords": ["wakanda", "widget", "href", "mailto", "email", "url", "link"],
-	"engines": {"wakanda" : ">=6.141313"},
+	"engines": {"wakanda" : ">=6.143362"},
 	"license": "MIT", 
 	"loadDependencies": [
-		{"id": "Widget_V2"},
+	    {"id": "Widget_V2"},
 	    {"id": "Hyperlink/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
 	    {"id": "Hyperlink/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
 	    {"id": "Hyperlink/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
