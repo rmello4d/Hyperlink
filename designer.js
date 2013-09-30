@@ -26,11 +26,10 @@
         name: 'data-label',
         description: 'Label',
         type: 'string'
-    },{
-        name: 'data-label-position',
-        description: 'Label position',
-        defaultValue: 'left'
     }]);
+
+    /*Default label position*/
+	Hyperlink.setLabelPosition("left");
 
     /*Default size*/
     Hyperlink.setWidth('200');
