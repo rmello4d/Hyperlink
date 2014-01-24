@@ -5,15 +5,16 @@
 	    "Erwan Carriou @ecarriou", 
 	    "Stephane Puybareau"
 	],
-	"version": "1.0.0",
-	"copyright": "(c)2013 Melinda Gallo",
+	"version": "1.0.1",
+	"copyright": "(c)2014 Melinda Gallo",
 	"repository": {
 	    "type": "git",
 	    "url": "https://github.com/melindagallo/Hyperlink.git"
 	},
 	"keywords": ["wakanda", "widget", "href", "mailto", "email", "url", "link"],
-	"engines": {"wakanda" : ">=6.143362"},
+	"engines": {"wakanda" : ">=8.152974"},
 	"license": "MIT", 
+	"studioPlatform": ["desktop", "smartphone", "tablet"],
 	"loadDependencies": [
 	    {"id": "Widget_V2"},
 	    {"id": "Hyperlink/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
