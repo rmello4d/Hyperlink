@@ -35,7 +35,7 @@
 
     /*Create label property*/
     Hyperlink.addLabel({
-        defaultValue: '',
+        defaultValue: 'Hyperlink',
         position: 'left'
     });
 
@@ -48,13 +48,6 @@
         'sizePosition': true,
         'label': true,
         'disabled': ['border-radius']
-    });
-
-    //display the datasource selected inside the widget
-    Hyperlink.on('Display', function(event) {
-        if (event['data-binding-url']) {
-            $('#' + event['id']).html('[' + event['data-binding-url'] + ']');
-        }
     });
     
 });
