@@ -23,25 +23,21 @@ WAF.define('Hyperlink', function() {
                     hyperlinkValue = 'http://' + hyperlinkValue;
                 }
                 targetToDisplay = ' target="' + targetText + '"';
-            }
-            else {
+            } else {
                 targetToDisplay = '';
             }
 
             if (hyperlinkText && hyperlinkText !== '') {
                 linkTextToDisplay = hyperlinkText; //get hyperlink text
-            }
-            else {
+            } else {
                 if (hyperlinkDefaultText) {
                     linkTextToDisplay = hyperlinkDefaultText; //if no hyperlink text, get default text from data-text property
-                }
-                else {
+                } else {
                     linkTextToDisplay = "Click here"; //if all else fails, use this text
                 }
             }
             this.node.innerHTML = '<a ' + targetToDisplay + 'href="' + prefix + hyperlinkValue + '">' + linkTextToDisplay + '</a>'; //insert <a> tag inside the <div> tag
-        }
-        else {
+        } else {
             this.node.innerHTML = ""; //no URL available
         }
     };
@@ -60,7 +56,9 @@ WAF.define('Hyperlink', function() {
     });
 
     Hyperlink.addProperty("target"); //data-target property
-    Hyperlink.addProperty("defaultText"); //data-defaulttext property
+    Hyperlink.addProperty("defaultText", { //data-defaulttext property
+        defaultValue: 'Click here'
+    });
 
     return Hyperlink;
 
