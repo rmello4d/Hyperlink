@@ -3,10 +3,10 @@ The __Hyperlink__ widget allows you to create a &lt;a&gt; tag  whose source and 
 
 ### Properties
 The __Hyperlink__ widget has the following properties:
-* __Hyperlink source__: Datasource of type Attribute that contains either an email address or a URL.
-* __Hyperlink text__: Datasource of type Attribute that contains the text that appears in the &lt;a&gt;...&lt;/a&gt; tag, which is visible on the browser.
+* __URL Source__: Datasource of type Attribute that contains either an email address or a URL.
+* __URL text Source__: Datasource of type Attribute that contains the text that appears in the &lt;a&gt;...&lt;/a&gt; tag, which is visible on the browser.
+* __Default text__: If the value in the "URL text Source" property is empty, the value in this property will be displayed each time  in the &lt;a&gt;...&lt;/a&gt; tag. By default, the value "Click here" is displayed if nothing is specified in this property.
 * __Target__: You can select either "_blank" to force the browser to open a new page/tab or "_self" to allow the browser to replace the existing page.
-* __Default text__: If you do not want to bind a datasource of type Attribute to Hyperlink text, the value in this property will be displayed each time  in the &lt;a&gt;...&lt;/a&gt; tag.
 * __Label__: A label that you can add to the widget.
 
 ### More Information
