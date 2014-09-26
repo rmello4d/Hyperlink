@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿WAF.define('Hyperlink', function() {
-=======
-WAF.define('Hyperlink', function() {
->>>>>>> fc98da3fb95f1cec428f47e64f7d48769f386b6c
     var widget = WAF.require('waf-core/widget');
     var Hyperlink = widget.create('Hyperlink');
 
@@ -16,11 +12,7 @@ WAF.define('Hyperlink', function() {
             hyperlinkText = this.urlText(),
             targetText = this.target(),
             hyperlinkDefaultText = this.options.defaulttext; // binded properties
-<<<<<<< HEAD
         if (hyperlinkValue && hyperlinkValue !== '') { //if there is a value in the hyperlink source property   
-=======
-        if (hyperlinkValue) { //if there is a value in the hyperlink source property   
->>>>>>> fc98da3fb95f1cec428f47e64f7d48769f386b6c
             var prefix = /[a-z0-9._+-]+@[a-z0-9._-]+\.[a-z]{2,5}/.test(hyperlinkValue) ? 'mailto:' : '',
                 //test to see if the hyperlink is an email address, if so add "mailto:"
                 targetToDisplay = '',
@@ -63,7 +55,6 @@ WAF.define('Hyperlink', function() {
         }
     });
 
-<<<<<<< HEAD
     Hyperlink.addProperty("defaultText", { //data-defaulttext property
         type: 'string',
         defaultValue: 'Click here'
@@ -78,13 +69,6 @@ WAF.define('Hyperlink', function() {
 	    bindable: false
 	});
 	
-=======
-    Hyperlink.addProperty("target"); //data-target property
-    Hyperlink.addProperty("defaultText", { //data-defaulttext property
-        defaultValue: 'Click here'
-    });
-
->>>>>>> fc98da3fb95f1cec428f47e64f7d48769f386b6c
     return Hyperlink;
 
 });
